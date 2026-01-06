@@ -1,3 +1,17 @@
+'''
+You are given a two-dimensional array (or list of lists) named accounts, 
+where accounts[i] is a list of integers representing the amounts of money the $i$-th customer has 
+in their bank accounts.The wealth of a customer is defined as the total amount of money they have 
+in all their bank accounts.Your task is to calculate the wealth of each customer and then return 
+the maximum wealth any single customer has.
+Input Format
+The input is an array of arrays, $\text{accounts}[i][j]$, where:$i$ represents the customer index.
+$j$ represents the account index for that customer.
+The value $\text{accounts}[i][j]$ is the money in a specific account.
+Output Format
+Return a single integer representing the maximum wealth found among all customers.
+'''
+
 class Solution(object):
     def maximumWealth(self, accounts:list[list[int]]):
         """

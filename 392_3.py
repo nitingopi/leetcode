@@ -28,14 +28,17 @@ Follow up: Suppose there are lots of incoming s, say s1, s2, ..., sk where k >= 
 '''
 
 def is_subsequence(t:str, s:str) -> bool:
-    prev_index = -1
-    for char in  s:
-        cur_index = t.find(char)
-        if cur_index < prev_index:
-            return False
-        prev_index = cur_index
-        print(f"{cur_index=}")
-    return True
+    s_pointer = 0
+    t_pointer = 0
+    while s_pointer < len(s) and t_pointer < len(t):
+        if s[s_pointer] == t[t_pointer]:
+            s_pointer += 1
+        t_pointer += 1
+    if s_pointer == len(s):
+        return True
+    else: 
+        return False        
+
 
 
 s:str = "abc"

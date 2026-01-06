@@ -34,12 +34,32 @@ Only one valid answer exists.
 Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
 '''
 
+'''
+bruteforece
 
-def two_sum(nums:list[int], target:int) -> tuple[int,int] | None:
-    for i in range(len(nums)-1):
-        for j in range(i+1, len(nums)):
-            if nums[i]+nums[j] == target:
-                return i,j
+def two_sum(nums,target):
+    for i in range(len(nums)):
+        cand_1 = nums[i]
+        cand_2 = target-cand_1
+        for j in range(i+1,len(nums)):
+            if nums[j] == cand_2:
+                return [i,j]       
+'''
+
+def two_sum(nums, target):
+    '''
+    [2,7,11,15], 9
+    map_candidates = { 2:0,  }
+    9-7=2
+    '''
+    map_candidates = {}
+    for i in range(len(nums)):
+        if nums[i] in map_candidates.keys():
+            return (map_candidates[nums[i]],i)
+        map_candidates[target-nums[i]]=i
+
+
+
 
 nums = [2, 7, 11, 15]
 target = 9
